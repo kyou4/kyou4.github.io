@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Symptom Log</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200"
+  >
+    <div class="flex flex-col h-screen">
+      <header
+        class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm"
+      >
+        <div
+          class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark"
+        >
+          <a href="symptomdashboard.html">
+            <span class="material-symbols-outlined text-3xl"
+              >arrow_back</span
+            ></a
+          >
+        </div>
+        <h1
+          class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Add Symptom Log
+        </h1>
+        <div class="flex w-12 items-center justify-end"></div>
+      </header>
+      <main class="flex-1 overflow-y-auto p-6 space-y-8">
+        <div class="space-y-4">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+            Itch Severity
+          </h2>
+          <div class="bg-white dark:bg-slate-900 p-4 rounded-lg shadow-sm">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm text-slate-500 dark:text-slate-400"
+                >Mild</span
+              >
+              <span class="text-sm text-slate-500 dark:text-slate-400"
+                >Severe</span
+              >
+            </div>
+            <div class="relative">
+              <input
+                class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full appearance-none cursor-pointer accent-primary"
+                max="5"
+                min="1"
+                type="range"
+                value="3"
+              />
+              <div
+                class="flex justify-between text-xs px-1 absolute w-full -bottom-5"
+              >
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+            Rash Appearance
+          </h2>
+          <div
+            class="bg-white dark:bg-slate-900 p-4 rounded-lg shadow-sm space-y-4"
+          >
+            <textarea
+              class="w-full p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md focus:ring-primary focus:border-primary placeholder-slate-400 dark:placeholder-slate-500"
+              placeholder="Describe the rash..."
+              rows="4"
+            ></textarea>
+            <button
+              class="flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary/10 dark:bg-primary/20 text-primary font-semibold rounded-md hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors"
+            >
+              <span class="material-symbols-outlined">add_a_photo</span>
+              <span>Upload Photo</span>
+            </button>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+            Sleep Disturbances
+          </h2>
+          <div class="bg-white dark:bg-slate-900 p-4 rounded-lg shadow-sm">
+            <select
+              class="w-full p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md focus:ring-primary focus:border-primary"
+            >
+              <option>No disturbance</option>
+              <option>Woke up once</option>
+              <option>Woke up multiple times</option>
+              <option>Couldn't sleep</option>
+            </select>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+            Mood/Behavioral Changes
+          </h2>
+          <div class="bg-white dark:bg-slate-900 p-4 rounded-lg shadow-sm">
+            <textarea
+              class="w-full p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md focus:ring-primary focus:border-primary placeholder-slate-400 dark:placeholder-slate-500"
+              placeholder="Describe any changes..."
+              rows="4"
+            ></textarea>
+          </div>
+        </div>
+        <div class="pt-4">
+          <a href="symptomdashboard.html">
+            <button
+              class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg shadow-md hover:opacity-90 transition-opacity"
+            >
+              Save Log
+            </button></a
+          >
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

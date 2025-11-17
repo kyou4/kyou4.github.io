@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Eczema Resources</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200"
+  >
+    <div class="max-w-md mx-auto flex flex-col min-h-screen">
+      <header
+        class="p-4 flex items-center justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+      >
+        <span class="w-6"></span>
+        <h1 class="text-lg font-bold">Resources</h1>
+        <span class="w-6"></span>
+      </header>
+      <main class="flex-grow px-4">
+        <div class="relative mb-6">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400"
+            >search</span
+          >
+          <input
+            class="w-full pl-10 pr-4 py-3 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-primary focus:outline-none placeholder-slate-500 dark:placeholder-slate-400"
+            placeholder="Search for topics"
+            type="text"
+          />
+        </div>
+        <section class="mb-8">
+          <h2 class="text-xl font-bold mb-4">Featured</h2>
+          <div class="flex overflow-x-auto space-x-4 pb-4 -mx-4 px-4">
+            <a href="/article.html">
+              <div class="flex-shrink-0 w-64">
+                <div
+                  class="w-full h-36 bg-cover bg-center rounded-xl mb-3"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRkmfdnEpVTlTB1P-v5zaPKq8YjtvQzOb02T7P52b5_BgrFw6_1S-DHHiha310eSIrS3dxfo22BcJzIir6mKkk-1iIHEHc60vdWcyapsaZWyixSmzf7zWmRN7cnWzhVSiPqo8e57EgfeqqwhsRsoJMopTEICLgAQmDslgZaRHK9DfL-l1ODvSCCIJwXpdEHScFsbklie2FezHjum3FbtTX4_hWgk3J9Sjml2Sv1fMcmEz2DjhPWXFpO3Wq-U3sMYS2lEmP2_2YZUU');
+                  "
+                ></div>
+
+                <h3 class="font-semibold">Understanding Eczema Triggers</h3>
+              </div>
+            </a>
+            <a href="/article.html">
+              <div class="flex-shrink-0 w-64">
+                <div
+                  class="w-full h-36 bg-cover bg-center rounded-xl mb-3"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHzpOjhCoqU-tu0mlxtqah8g2Iy_6sFleNIW6eMoAEzuVd-rXva30DcKbIihwxMHrdkG4c2Co2OLFCeRnE71ispaJYPDWMlP0qKu0iWdGA2j5IROL-fnwBroxPFGRTDgmcwLu-r-xPowPGlaCwJggkLBCDG9mHcPXa1vixLtjJXMzMWhHE9jtdTqG60fr5k7cf_XcPMXypo8H55PLmTR-KqoumD9GN8gKjEdOIv0qmp-FaVHpHLdK205SkAE-JqUnEbJXttcbnyvo');
+                  "
+                ></div>
+                <h3 class="font-semibold">New Treatments for Eczema</h3>
+              </div>
+            </a>
+            <a href="/article.html">
+              <div class="flex-shrink-0 w-64">
+                <div
+                  class="w-full h-36 bg-cover bg-center rounded-xl mb-3"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDw8twAZfbS1jN8ZBQi-6hkIzCL6x2KNaTV5uTnkwMdbYahPFI7kenH51CP_wTsnknGmPOrKxrjpe1cpE9wFj1P_ESaEQcSPtsthq0mDKzBUlVQpdhBqekpd1QvxuAcOgWh0lRfL6KjTnyQpnQijzNYD7GQ2dS5ugvAjSZHgXPkx3g73GiXISpcl8rxk7Z1UyXiHUBsssKmzDziGQ7FX64Rt2l8YOPil-n5xQGO16s9-gcLap7kl-0iKAvAwY8ZelGhdx44v9KEr7A');
+                  "
+                ></div>
+                <h3 class="font-semibold">Managing Eczema Flare-Ups</h3>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section>
+          <h2 class="text-xl font-bold mb-4">Categories</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <a
+              class="flex items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-primary mr-3"
+                >article</span
+              >
+              <span class="font-semibold">Articles</span>
+            </a>
+            <a
+              class="flex items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-primary mr-3"
+                >videocam</span
+              >
+              <span class="font-semibold">Videos</span>
+            </a>
+            <a
+              class="flex items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-primary mr-3"
+                >groups</span
+              >
+              <span class="font-semibold">Expert Advice</span>
+            </a>
+            <a
+              class="flex items-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-primary mr-3"
+                >quiz</span
+              >
+              <span class="font-semibold">FAQ</span>
+            </a>
+          </div>
+        </section>
+      </main>
+      <footer
+        class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800"
+      >
+        <nav class="flex justify-around items-center h-20">
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="home.html"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="insight.html"
+          >
+            <span class="material-symbols-outlined">insights</span>
+            <span class="text-xs font-medium">Insights</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-primary"
+            href="resources.html"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center -mt-8 bg-primary text-white rounded-full shadow-lg"
+            >
+              <span class="material-symbols-outlined" style="font-size: 32px"
+                >library_books</span
+              >
+            </div>
+            <span
+              class="text-xs font-medium -mt-1 text-slate-800 dark:text-slate-200"
+              >Resources</span
+            >
+          </a>
+
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="tracker.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <span class="text-xs font-medium">Tracker</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="editprofile.html"
+          >
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-xs font-medium">Profile</span>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

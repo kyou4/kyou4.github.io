@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#38e07b",
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex flex-col h-screen justify-between">
+      <div class="flex-grow">
+        <header class="p-4">
+          <div class="items-center justify-between">
+            <h1
+              class="text-lg font-bold text-gray-900 dark:text-gray-100 flex-grow text-center"
+            >
+              Add Child Profile
+            </h1>
+            <div class="w-8"></div>
+          </div>
+        </header>
+        <main class="px-4 py-6 space-y-6">
+          <div class="flex flex-col items-center justify-center">
+            <button
+              class="relative w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-4xl text-primary">
+                add_a_photo
+              </span>
+            </button>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+              Add Photo
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                for="child-name"
+                >Child's Name</label
+              >
+              <input
+                class="form-input w-full rounded-lg border-0 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary h-12 px-4 shadow-sm"
+                id="child-name"
+                placeholder="Enter name"
+                type="text"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                for="child-age"
+                >Child's Age</label
+              >
+              <input
+                class="form-input w-full rounded-lg border-0 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary h-12 px-4 shadow-sm"
+                id="child-age"
+                placeholder="Enter age"
+                type="text"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                for="eczema-type"
+                >Type of Eczema</label
+              >
+              <div class="relative">
+                <select
+                  class="form-select w-full rounded-lg border-0 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary h-12 px-4 appearance-none shadow-sm"
+                  id="eczema-type"
+                >
+                  <option selected="">Select type</option>
+                  <option>Atopic Dermatitis</option>
+                  <option>Contact Dermatitis</option>
+                  <option>Dyshidrotic Eczema</option>
+                  <option>Nummular Eczema</option>
+                  <option>Seborrheic Dermatitis</option>
+                  <option>Stasis Dermatitis</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300"
+                >
+                  <span class="material-symbols-outlined">expand_more</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                for="medical-history"
+                >Relevant Medical History</label
+              >
+              <textarea
+                class="form-textarea w-full rounded-lg border-0 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary min-h-[120px] p-4 shadow-sm"
+                id="medical-history"
+                placeholder="e.g., allergies, other conditions"
+              ></textarea>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="p-4 border-gray-200 dark:border-gray-800">
+        <a href="home.html">
+          <button
+            class="w-full bg-primary text-gray-900 font-bold h-12 rounded-xl flex items-center justify-center text-base"
+          >
+            Save Profile
+          </button>
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-black dark:text-white"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
+    >
+      <div class="flex-grow">
+        <header
+          class="p-4 flex items-center justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+        >
+          <span class="w-6"></span>
+          <h1 class="text-lg font-bold">Insights</h1>
+          <span class="w-6"></span>
+        </header>
+        <main class="p-4">
+          <div class="mb-6">
+            <h2 class="text-2xl font-bold">Personalized Insights</h2>
+            <p class="mt-2 text-black/60 dark:text-white/60">
+              Based on your tracking data, we've identified some potential
+              triggers and recommendations to help manage your child's eczema.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div
+              class="flex items-start gap-4 rounded-xl bg-white dark:bg-background-dark p-4 shadow-sm"
+            >
+              <div class="flex-1">
+                <h3 class="font-bold">Moisturize Regularly</h3>
+                <p class="mt-1 text-sm text-black/60 dark:text-white/60">
+                  Apply a thick, fragrance-free moisturizer to your child's skin
+                  at least twice a day, especially after bathing.
+                </p>
+              </div>
+              <div
+                class="h-20 w-20 flex-shrink-0 rounded-lg bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSC7hQg8wtCh0njBneqa5uBl3GvSmPhNaLj99ye7Il6J7HDm2hRrRtTGxfyXK4LK4t2FFJ5WbTMaLLcpgEmZSEFTnjvrVfVa8wBUfC4BVPy8mphHlgNtoULmWtf2d17W2hJyHOFhUEEtJu-NL55gPIwk-6LfHBx-zZVrqbhsaMVkouLTQ-A0i_3HcOyomCtG4GAWLqOXM5rRntw2hCP2JsCJs4MBT-V7EwQQTo-JVwpvErnsVbFvJY6wBTTt5RsfxrRtLSMNEl9Hc');
+                "
+              ></div>
+            </div>
+            <div
+              class="flex items-start gap-4 rounded-xl bg-white dark:bg-background-dark p-4 shadow-sm"
+            >
+              <div class="flex-1">
+                <h3 class="font-bold">Identify and Avoid Triggers</h3>
+                <p class="mt-1 text-sm text-black/60 dark:text-white/60">
+                  Common triggers include certain fabrics, soaps, and allergens.
+                  Keep a detailed log to pinpoint potential irritants.
+                </p>
+              </div>
+              <div
+                class="h-20 w-20 flex-shrink-0 rounded-lg bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbYbjUVIfjO-ORGaQcZ6tswe9Ke5TJ7cWNPrmAd9Yq2cxI1WiG0JdDr37CdNewlWfZCWAa9AU_R-TwP1ri-Vv2xNMgvuVqNIzQWfdovXxR-7c9WGsY4JX_M1BqxE_fjm_JWLDUTI0leMpBMjjne55U1HyrdtzrfZuUOK-VOqg-6Evo4mxswPFaTvd7DJq50sRnnp8r-eL4PZUh0aNb9wXPvzKi_kqY6xdkj2PEsLM160T49bUpNiobAVL7OfTDhjsDj3xFFb14is4');
+                "
+              ></div>
+            </div>
+            <div
+              class="flex items-start gap-4 rounded-xl bg-white dark:bg-background-dark p-4 shadow-sm"
+            >
+              <div class="flex-1">
+                <h3 class="font-bold">Consider Wet Wraps</h3>
+                <p class="mt-1 text-sm text-black/60 dark:text-white/60">
+                  For severe flare-ups, wet wraps can provide relief and help
+                  the skin absorb moisturizer more effectively.
+                </p>
+              </div>
+              <div
+                class="h-20 w-20 flex-shrink-0 rounded-lg bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-LP2AXj5ZWqmSdgm32UBcalfxvuQoZr6J_5tERi6m0cVH-S3PxdFu7e57mHkn95IFZXtS08zg552zDJQj_sA2B5o5A2vQTJIVzZWead6ObqPKQ6OUmEHEIHD9EgwDkvGZEOv84NNvcb_EQIbwSu2WHTaI3vm9gWsmgQHdFj01Vh73ukeeizyaLucUYX0CUY_AqmbiUm4iueKg30XLvf-QbKNkPqXQTnZyrwbjSPO10M-_H3KaPXALPhYooqC2ZhEg4a1i8rAyGJs');
+                "
+              ></div>
+            </div>
+            <div
+              class="flex items-start gap-4 rounded-xl bg-white dark:bg-background-dark p-4 shadow-sm"
+            >
+              <div class="flex-1">
+                <h3 class="font-bold">Consult a Pediatrician</h3>
+                <p class="mt-1 text-sm text-black/60 dark:text-white/60">
+                  If symptoms persist or worsen, seek professional medical
+                  advice to explore further treatment options.
+                </p>
+              </div>
+              <div
+                class="h-20 w-20 flex-shrink-0 rounded-lg bg-cover bg-center"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZVRPvK2BtZte9WwT6OiSzKubsmpaRm-TGYD2cksfmD98oxuZAPABGhO8acVPp2QruNIKrS2_a4JLYGLdDynSHb_PX5X02K94ZHlqGCikxYnTK4H-M8bICwtSW-DiqRuZAhYR1RCLLIFOXZyeByYUoeFQQLm8ElGQDDF7NoQYbw-ZG2sz7kq262qlWQDVnKKePVi1N0OhFSBFAzUyb8UPqSTldnNl6U-wExhmayQB-tYIgUtsayeJxtPoC28byGYn0-BFBDbMajUY');
+                "
+              ></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer
+      class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800"
+    >
+      <nav class="flex justify-around items-center h-20">
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="home.html"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span class="text-xs font-medium">Home</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="insight.html"
+        >
+          <span class="material-symbols-outlined">insights</span>
+          <span class="text-xs font-medium">Insights</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-primary"
+          href="resources.html"
+        >
+          <div
+            class="w-16 h-16 flex items-center justify-center -mt-8 bg-primary text-white rounded-full shadow-lg"
+          >
+            <span class="material-symbols-outlined" style="font-size: 32px"
+              >library_books</span
+            >
+          </div>
+          <span
+            class="text-xs font-medium -mt-1 text-slate-800 dark:text-slate-200"
+            >Resources</span
+          >
+        </a>
+
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="tracker.html"
+        >
+          <span class="material-symbols-outlined">bar_chart</span>
+          <span class="text-xs font-medium">Tracker</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="editprofile.html"
+        >
+          <span class="material-symbols-outlined">person</span>
+          <span class="text-xs font-medium">Profile</span>
+        </a>
+      </nav>
+    </footer>
+  </body>
+</html>

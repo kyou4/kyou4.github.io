@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Educational Article</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display group/design-root overflow-x-hidden"
+      style="font-family: 'Inter', sans-serif"
+    >
+      <!-- Top Navigation Bar -->
+      <div
+        class="sticky top-0 z-10 flex h-16 items-center bg-background-light dark:bg-background-dark px-4 pb-2 pt-4 justify-between border-b border-gray-200 dark:border-gray-800"
+      >
+        <div
+          class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark"
+        >
+          <a href="resources.html">
+            <button
+              class="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <span class="material-symbols-outlined text-2xl">arrow_back</span>
+            </button>
+          </a>
+        </div>
+        <h2
+          class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-text-light dark:text-text-dark"
+        >
+          Educational Article
+        </h2>
+        <div class="flex w-24 items-center justify-end gap-2">
+          <button
+            class="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            <span class="material-symbols-outlined text-2xl"
+              >bookmark_border</span
+            >
+          </button>
+          <button
+            class="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            <span class="material-symbols-outlined text-2xl">share</span>
+          </button>
+        </div>
+      </div>
+      <div class="px-4">
+        <!-- Article Header -->
+        <!-- HeadlineText -->
+        <h1
+          class="text-text-light dark:text-text-dark tracking-light text-[32px] font-bold leading-tight text-left pb-3 pt-6"
+        >
+          Understanding Common Eczema Triggers in Toddlers
+        </h1>
+        <!-- MetaText -->
+        <p
+          class="text-accent-light dark:text-accent-dark text-sm font-medium leading-normal pb-6"
+        >
+          By Dr. Jane Doe • 5 min read
+        </p>
+        <!-- Article Body -->
+        <!-- MediaPlayer as Hero Video -->
+        <div
+          class="relative flex items-center justify-center bg-cover bg-center aspect-video rounded-xl overflow-hidden"
+          data-alt="A dermatologist explaining eczema concepts to a mother and child"
+          style="
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxQF6CZdWoxVO5joiV6_ZHzMsGO4NfRFWBFXDrDHNCj3G7VGmGVMF0aiVcnz6xL73VxroD_GQ8pi0Qhla_nc3Vleh-JwIgdFV-oEvNZh8tS6CGJYoM3qMUkDGsRbqO12jOevpK5vNBpzfe2mDXaHaaWN_gNb_oLLE9zv4ghOAI0k-8Jzm8-j0QxcporWdYXg-CKGJDNUU8z_r6n8rj_w_lI17cdsmrx3LlnkLCx-mTwY-27AwLb6_0QklNFqYww6SmInRd3ANRlpE');
+          "
+        >
+          <button
+            class="flex shrink-0 items-center justify-center rounded-full size-16 bg-black/50 text-white hover:bg-black/70 transition-colors"
+          >
+            <span
+              class="material-symbols-outlined text-4xl"
+              style="font-variation-settings: 'FILL' 1"
+              >play_arrow</span
+            >
+          </button>
+          <div
+            class="absolute inset-x-0 bottom-0 px-4 py-3 bg-gradient-to-t from-black/50 to-transparent"
+          >
+            <div class="flex h-4 items-center justify-center gap-1">
+              <div
+                class="h-1 flex-1 rounded-full bg-white/80"
+                style="flex-basis: 30%"
+              ></div>
+              <div class="relative">
+                <div
+                  class="absolute -left-2 -top-[7px] size-4 rounded-full bg-white shadow"
+                ></div>
+              </div>
+              <div
+                class="h-1 flex-1 rounded-full bg-white/40"
+                style="flex-basis: 70%"
+              ></div>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <p
+                class="text-white text-xs font-medium leading-normal tracking-[0.015em]"
+              >
+                0:37
+              </p>
+              <p
+                class="text-white text-xs font-medium leading-normal tracking-[0.015em]"
+              >
+                2:23
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- BodyText -->
+        <p
+          class="text-text-light dark:text-text-dark text-base font-normal leading-relaxed pt-6 pb-4"
+        >
+          Eczema in toddlers can be challenging, but understanding and
+          identifying potential triggers is a crucial first step towards
+          managing your child's symptoms. This article explores the most common
+          culprits, from environmental factors to dietary considerations.
+        </p>
+        <!-- Formatted Content: Subheading -->
+        <h3
+          class="text-text-light dark:text-text-dark text-xl font-bold leading-snug pt-4 pb-2"
+        >
+          Environmental Triggers
+        </h3>
+        <!-- Formatted Content: Body Text with Bullet Points -->
+        <p
+          class="text-text-light dark:text-text-dark text-base font-normal leading-relaxed pb-4"
+        >
+          The world around your toddler can be full of irritants. Pay close
+          attention to these common environmental factors:
+        </p>
+        <ul
+          class="list-disc list-outside space-y-2 pl-5 pb-4 text-text-light dark:text-text-dark text-base font-normal leading-relaxed"
+        >
+          <li>
+            <strong>Fabrics:</strong> Wool and synthetic fabrics like polyester
+            can be scratchy and irritating. Opt for soft, breathable materials
+            like 100% cotton.
+          </li>
+          <li>
+            <strong>Soaps and Detergents:</strong> Fragrances and harsh
+            chemicals in laundry detergents, soaps, and bubble baths are
+            frequent triggers. Look for 'fragrance-free' and 'hypoallergenic'
+            labels.
+          </li>
+          <li>
+            <strong>Temperature Changes:</strong> Both overheating and dry, cold
+            air can cause flare-ups. Dress your child in layers and use a
+            humidifier in dry conditions.
+          </li>
+        </ul>
+        <!-- In-line Image -->
+        <div class="py-4">
+          <img
+            class="w-full h-auto rounded-xl object-cover"
+            data-alt="A mother gently applying lotion to her toddler's arm to soothe eczema."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqyEGAlPP3jfey1p0CwaQ_mQZ_6chje1x6nGQYVO-Ef0itlU_rO7C3OOOPH-K2ArAufQMh7jFvX9WC_slgFCz1jxenAzTLYw9HPKt3QCpt2RDmRaqYusgOcEIkSfECoglbrcHzgO6t7qa1ADRFmoXrMFztgu8IRq9A7GNywKTgsYtZa8hwYrrzHvOQ1JBWuMBd7f1iEG38mgtdWpesmqVnlK-OZ1jf4NlZ4jd-F6769dltzFfu2irtquI7Dk02gzs7SP7_socbJJw"
+          />
+          <p
+            class="text-center text-sm text-text-muted-light dark:text-text-muted-dark pt-2"
+          >
+            A consistent, gentle skincare routine is key to managing eczema.
+          </p>
+        </div>
+        <!-- Formatted Content: Subheading -->
+        <h3
+          class="text-text-light dark:text-text-dark text-xl font-bold leading-snug pt-4 pb-2"
+        >
+          Dietary Considerations
+        </h3>
+        <!-- Formatted Content: Blockquote -->
+        <blockquote
+          class="border-l-4 border-primary my-4 pl-4 italic text-text-muted-light dark:text-text-muted-dark"
+        >
+          "While less common, food allergies can be a significant trigger for
+          some children. It's important to consult with a pediatrician or
+          allergist before making major dietary changes."
+        </blockquote>
+        <p
+          class="text-text-light dark:text-text-dark text-base font-normal leading-relaxed pb-8"
+        >
+          Common food allergens that have been linked to eczema include dairy,
+          eggs, soy, and nuts. If you suspect a food trigger, keeping a detailed
+          food and symptom diary can be incredibly helpful for identifying
+          patterns. Discuss these findings with your doctor to determine the
+          best course of action.
+        </p>
+      </div>
+      <div class="h-10 bg-background-light dark:bg-background-dark"></div>
+    </div>
+  </body>
+</html>

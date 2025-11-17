@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Reminders - Eczema Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden"
+    >
+      <!-- Top App Bar -->
+      <header
+        class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm"
+      >
+        <div
+          class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark"
+        ><a href="tracker.html">
+          <span class="material-symbols-outlined text-3xl">arrow_back</span></a>
+        </div>
+        <h1
+          class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Reminders
+        </h1>
+        <div class="flex w-12 items-center justify-end">
+          <a href="addreminder.html">
+            <button
+            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-text-light dark:text-text-dark"
+          >
+            <span class="material-symbols-outlined text-3xl">add</span>
+          </button>
+          </a>
+        </div>
+      </header>
+      <!-- Segmented Buttons -->
+      <div class="flex px-4 py-3">
+        <div
+          class="flex h-12 flex-1 items-center justify-center rounded-xl bg-chip-bg-light dark:bg-chip-bg-dark p-1.5"
+        >
+          <label
+            class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-card-light has-[:checked]:dark:bg-card-dark has-[:checked]:shadow-sm has-[:checked]:text-text-light has-[:checked]:dark:text-text-dark text-accent-text-light/70 dark:text-accent-text-dark/70 text-sm font-medium leading-normal transition-colors duration-200"
+          >
+            <span class="truncate">Active</span>
+            <input
+              checked=""
+              class="invisible w-0"
+              name="reminder-status"
+              type="radio"
+              value="Active"
+            />
+          </label>
+          <label
+            class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-card-light has-[:checked]:dark:bg-card-dark has-[:checked]:shadow-sm has-[:checked]:text-text-light has-[:checked]:dark:text-text-dark text-accent-text-light/70 dark:text-accent-text-dark/70 text-sm font-medium leading-normal transition-colors duration-200"
+          >
+            <span class="truncate">Past</span>
+            <input
+              class="invisible w-0"
+              name="reminder-status"
+              type="radio"
+              value="Past"
+            />
+          </label>
+        </div>
+      </div>
+      <!-- Filter Chips -->
+      <div class="flex gap-2 p-3 px-4 overflow-x-auto whitespace-nowrap">
+        <div
+          class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4"
+        >
+          <p class="text-text-light text-sm font-semibold leading-normal">
+            All
+          </p>
+        </div>
+        <div
+          class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-chip-bg-light dark:bg-chip-bg-dark pl-4 pr-4"
+        >
+          <p
+            class="text-text-light dark:text-text-dark text-sm font-medium leading-normal"
+          >
+            Medication
+          </p>
+        </div>
+        <div
+          class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-chip-bg-light dark:bg-chip-bg-dark pl-4 pr-4"
+        >
+          <p
+            class="text-text-light dark:text-text-dark text-sm font-medium leading-normal"
+          >
+            Appointments
+          </p>
+        </div>
+        <div
+          class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-chip-bg-light dark:bg-chip-bg-dark pl-4 pr-4"
+        >
+          <p
+            class="text-text-light dark:text-text-dark text-sm font-medium leading-normal"
+          >
+            Others
+          </p>
+        </div>
+        <div
+          class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-chip-bg-light dark:bg-chip-bg-dark pl-4 pr-4"
+        >
+          <p
+            class="text-text-light dark:text-text-dark text-sm font-medium leading-normal"
+          >
+            Triggers
+          </p>
+        </div>
+      </div>
+      <main class="flex flex-col gap-4 px-4 py-2">
+        <!-- Today Section -->
+        <section>
+          <h3
+            class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-tight px-0 pb-2 pt-4"
+          >
+            Today
+          </h3>
+
+          <div class="flex flex-col gap-3">
+            <!-- Reminder Card 1 -->
+                       <a href="reminderdetail.html">
+            <div
+              class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 min-h-[80px] rounded-xl shadow-sm justify-between"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="text-accent-text-light dark:text-accent-text-dark flex items-center justify-center rounded-full bg-accent-light/50 dark:bg-accent-dark/50 shrink-0 size-12"
+                >
+                  <span class="material-symbols-outlined">medication</span>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p
+                    class="text-text-light dark:text-text-dark text-base font-semibold leading-normal line-clamp-1"
+                  >
+                    Morning Medication
+                  </p>
+                  <p
+                    class="text-accent-text-light/70 dark:text-accent-text-dark/70 text-sm font-normal leading-normal line-clamp-2"
+                  >
+                    Today at 8:00 AM
+                  </p>
+                </div>
+              </div>
+              <div class="shrink-0 flex items-center gap-2">
+                <div class="flex size-8 items-center justify-center">
+                  <input
+                    class="h-6 w-6 rounded-md border-accent-light dark:border-accent-dark border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none transition-colors duration-200"
+                    type="checkbox"
+                  />
+                </div>
+                <span
+                  class="material-symbols-outlined text-text-light/50 dark:text-text-dark/50"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+            </a>
+            <!-- Reminder Card 2 -->
+             <a href="reminderdetail.html">
+            <div
+              class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 min-h-[80px] rounded-xl shadow-sm justify-between"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="text-accent-text-light dark:text-accent-text-dark flex items-center justify-center rounded-full bg-accent-light/50 dark:bg-accent-dark/50 shrink-0 size-12"
+                >
+                  <span class="material-symbols-outlined">edit_calendar</span>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p
+                    class="text-text-light dark:text-text-dark text-base font-semibold leading-normal line-clamp-1"
+                  >
+                    Log Afternoon Symptoms
+                  </p>
+                  <p
+                    class="text-accent-text-light/70 dark:text-accent-text-dark/70 text-sm font-normal leading-normal line-clamp-2"
+                  >
+                    Today at 1:00 PM
+                  </p>
+                </div>
+              </div>
+              <div class="shrink-0 flex items-center gap-2">
+                <div class="flex size-8 items-center justify-center">
+                  <input
+                    class="h-6 w-6 rounded-md border-accent-light dark:border-accent-dark border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none transition-colors duration-200"
+                    type="checkbox"
+                  />
+                </div>
+                <span
+                  class="material-symbols-outlined text-text-light/50 dark:text-text-dark/50"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+            </a>
+          </div>
+
+        </section>
+        <!-- Tomorrow Section -->
+        <section>
+          <h3
+            class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-tight px-0 pb-2 pt-4"
+          >
+            Tomorrow
+          </h3>
+          <div class="flex flex-col gap-3">
+            <!-- Reminder Card 3 -->
+             <a href="reminderdetail.html">
+            <div
+              class="flex items-center gap-4 bg-card-light dark:bg-card-dark p-4 min-h-[80px] rounded-xl shadow-sm justify-between"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="text-accent-text-light dark:text-accent-text-dark flex items-center justify-center rounded-full bg-accent-light/50 dark:bg-accent-dark/50 shrink-0 size-12"
+                >
+                  <span class="material-symbols-outlined">calendar_month</span>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p
+                    class="text-text-light dark:text-text-dark text-base font-semibold leading-normal line-clamp-1"
+                  >
+                    Dermatologist Check-up
+                  </p>
+                  <p
+                    class="text-accent-text-light/70 dark:text-accent-text-dark/70 text-sm font-normal leading-normal line-clamp-2"
+                  >
+                    Tomorrow at 10:30 AM
+                  </p>
+                </div>
+              </div>
+              <div class="shrink-0 flex items-center gap-2">
+                <div class="flex size-8 items-center justify-center">
+                  <input
+                    class="h-6 w-6 rounded-md border-accent-light dark:border-accent-dark border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-accent-light dark:focus:border-accent-dark focus:outline-none transition-colors duration-200"
+                    type="checkbox"
+                  />
+                </div>
+                <span
+                  class="material-symbols-outlined text-text-light/50 dark:text-text-dark/50"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+            </a>
+          </div>
+        </section>
+
+      <div
+        class="px-4 py-5 mt-auto bg-background-light dark:bg-background-dark sticky bottom-0"
+      >
+        <a href="addrem.html">
+          <button
+            class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]"
+          >
+            <span class="truncate">Create New Reminder</span>
+          </button>
+        </a>
+      </div>
+    </div>
+    
+    
+      </main>
+            <footer
+        class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800"
+      >
+        <nav class="flex justify-around items-center h-20">
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="home.html"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="insight.html"
+          >
+            <span class="material-symbols-outlined">insights</span>
+            <span class="text-xs font-medium">Insights</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-primary"
+            href="resources.html"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center -mt-8 bg-primary text-white rounded-full shadow-lg"
+            >
+              <span class="material-symbols-outlined" style="font-size: 32px"
+                >library_books</span
+              >
+            </div>
+            <span
+              class="text-xs font-medium -mt-1 text-slate-800 dark:text-slate-200"
+              >Resources</span
+            >
+          </a>
+
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="tracker.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <span class="text-xs font-medium">Tracker</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="editprofile.html"
+          >
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-xs font-medium">Profile</span>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

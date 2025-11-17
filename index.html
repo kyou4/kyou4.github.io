@@ -1,18 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>jQuery Load Test</title>
-  </head>
-  <body>
-    <h1>Hello</h1>
-
-    <!-- Local jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Eczema Tracker Welcome</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <script>
-      $(document).ready(function () {
-        console.log("jQuery loaded!");
-      });
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
     </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex flex-col min-h-screen">
+      <div class="flex-grow">
+        <div
+          class="w-full h-80 bg-cover bg-center"
+          style="
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcYIFq1aTHGc_5lOSi40gve0AkTdhmZ4fUoob93sNW9QgJx66_zkGpr3U6nKdYtjjXzKqnNFITXMj7iScCQo9vy2omBcNAp0u15fzH3S3xtnEyhuehZJlg2dMSaLvPn_BvGkcMv97utB6P-oUnBrf4_C0rw0MVlcZkOyHj2Iehp3Ogg7E8xcuhNpjm5zbxuTVVsbkAq2iJRpT30KcqhQlQBjGdtUs8ixGsDnZ-uRRVkYrrDGUnFOEruHMPGjIHG4CCXnCaIre9ArM');
+          "
+        ></div>
+        <div class="px-6 py-8 text-center">
+          <h1
+            class="text-3xl font-bold text-gray-900 dark:text-white leading-tight"
+          >
+            Welcome to Eczema Ease
+          </h1>
+          <p class="mt-4 text-base text-gray-600 dark:text-gray-300">
+            Your partner in understanding and managing your child's eczema.
+            Track symptoms, identify triggers, and find relief together.
+          </p>
+        </div>
+      </div>
+      <div class="px-6 pb-8 pt-4">
+        <a href="editprofile.html">
+          <button
+            class="w-full h-14 bg-primary text-gray-900 font-bold text-lg rounded-xl shadow-lg hover:bg-primary/90 transition-colors"
+          >
+            Get Started
+          </button>
+        </a>
+      </div>
+    </div>
   </body>
 </html>

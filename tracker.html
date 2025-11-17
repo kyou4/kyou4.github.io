@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Eczema Tracker Menu</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body class="font-display">
+    <div
+      class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden"
+    >
+      <div
+        class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between"
+      >
+        <div
+          class="flex size-12 shrink-0 items-center text-black dark:text-text-dark"
+        ></div>
+        <h2
+          class="text-black dark:text-text-dark text-lg font-bold leading-tight flex-1 text-center"
+        >
+          Tracker Menu
+        </h2>
+        <div class="flex w-12 items-center justify-end">
+          <button
+            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-black dark:text-text-dark gap-2 text-base font-bold leading-normal min-w-0 p-0"
+          ></button>
+        </div>
+      </div>
+      <main class="flex-1 px-4 pt-8 pb-4">
+        <div class="flex flex-col gap-6">
+          <a
+            class="flex flex-col items-center justify-center gap-4 bg-primary p-6 h-40 text-center rounded-lg shadow-sm transition-shadow hover:shadow-md"
+            href="symptomdashboard.html"
+          >
+            <span class="material-symbols-outlined text-4xl text-white"
+              >edit_calendar</span
+            >
+            <div class="flex flex-col justify-center">
+              <p class="text-white text-lg font-semibold leading-normal">
+                Daily Symptom Tracker
+              </p>
+              <p class="text-white/80 text-sm font-normal leading-normal">
+                Log today's symptoms and triggers
+              </p>
+            </div>
+          </a>
+
+          <a
+            class="flex flex-col items-center justify-center gap-4 bg-card-light dark:bg-card-dark p-6 h-40 text-center rounded-lg shadow-sm transition-shadow hover:shadow-md"
+            href="reminder.html"
+          >
+            <span class="material-symbols-outlined text-4xl text-primary"
+              >notifications</span
+            >
+            <div class="flex flex-col justify-center">
+              <p
+                class="text-black dark:text-text-dark text-lg font-semibold leading-normal"
+              >
+                View All Reminders
+              </p>
+              <p
+                class="text-gray dark:text-text-dark/70 text-sm font-normal leading-normal"
+              >
+                Manage routine reminders
+              </p>
+            </div>
+          </a>
+        </div>
+      </main>
+      <div class="flex-grow"></div>
+      <footer
+        class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800"
+      >
+        <nav class="flex justify-around items-center h-20">
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="home.html"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="insight.html"
+          >
+            <span class="material-symbols-outlined">insights</span>
+            <span class="text-xs font-medium">Insights</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-primary"
+            href="resources.html"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center -mt-8 bg-primary text-white rounded-full shadow-lg"
+            >
+              <span class="material-symbols-outlined" style="font-size: 32px"
+                >library_books</span
+              >
+            </div>
+            <span
+              class="text-xs font-medium -mt-1 text-slate-800 dark:text-slate-200"
+              >Resources</span
+            >
+          </a>
+
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="tracker.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <span class="text-xs font-medium">Tracker</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="editprofile.html"
+          >
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-xs font-medium">Profile</span>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

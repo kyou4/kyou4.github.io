@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Eczema Symptom Tracker Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-primary-black dark:text-gray-200"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-md mx-auto"
+    >
+      <header
+        class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm"
+      >
+        <div
+          class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark"
+        >
+          <a href="tracker.html">
+            <span class="material-symbols-outlined text-3xl"
+              >arrow_back</span
+            ></a
+          >
+        </div>
+        <h1
+          class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Symptom Dashboard
+        </h1>
+        <div class="flex w-12 items-center justify-end"></div>
+      </header>
+      <div class="flex flex-col px-4 pt-5 space-y-6 flex-grow">
+        <div>
+          <h2
+            class="text-primary-black dark:text-gray-200 text-xl font-bold mb-4"
+          >
+            Recent Symptom Logs
+          </h2>
+          <div class="flex overflow-x-auto space-x-4 pb-2 -mx-4 px-4">
+            <div class="flex-shrink-0 w-40">
+              <div class="bg-gray-200 h-40 rounded-xl overflow-hidden">
+                <img
+                  alt="Eczema on skin"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC762oJR1hq4B_dcH37S6Ikvp5WjcoHYRWaeM6NWM1z5OsNARZCNWGUFxktiGrf7V74Jus6vZp7RzzPB5m_RC4zDGZjyy7UxBTIo8ruYwpco7wL8VfPmVaRILIsuae-Y1eUyEQzsOp9eGMzWZF6jVxOormbamdutZTL9Df4rY8n2HqgSqhQCaRKajkYDs8Rf4zaLuTCuOL709Ar9sB9gAnsUBVgjL7wne-KqOJ29kzkq5Ph6Qboi8Ddz57b5Ssa6gNkzMq_txg0Zmc"
+                />
+              </div>
+              <p class="mt-2 font-semibold text-primary-black text-sm">
+                High Severity
+              </p>
+              <p class="text-xs text-gray-500">May 24, Redness...</p>
+            </div>
+            <div class="flex-shrink-0 w-40">
+              <div class="bg-gray-200 h-40 rounded-xl overflow-hidden">
+                <img
+                  alt="Eczema on a child's arm"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy4TYqG2IcMObC_t_9okV9-581mqkpVi3uj0NQJVEXvIiptAs7f_3eJeZ_9SXLnx2qLeHsznWysD-4t7zkHD0bRSusQW8kfZ8duSiVUlXoSTWuZpfi7iK4QgtdIIwzOPMhtl0E-wDQb5eO6TO4UBs3Wo5ROIyTGD_ITZbZOfrekc48HDMLBp9Mtl5Wt3qMGWSglXoIY_khPngSu_SHYRs0V2MJ6KVcmPDuTQ6pHvvnYJscJyVq0elhf3dVUcZakUSX4biFDqD6LVU"
+                />
+              </div>
+              <p class="mt-2 font-semibold text-primary-black text-sm">
+                Medium Severity
+              </p>
+              <p class="text-xs text-gray-500">May 23, Dry patch...</p>
+            </div>
+            <div class="flex-shrink-0 w-40">
+              <div class="bg-gray-200 h-40 rounded-xl overflow-hidden">
+                <img
+                  alt="Skin irritation"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6AygOpAMFmJzpaN5mAd9Y1I54TX8AUzFKXkdoo9b5dZwRcsZesYWlfDB68cyUvrn7YMlXzSW0GqMdHm9rQ3PlnuuZZ-4YB4SmgCW9YKTMyJXZLv7MNd0s_ykoVnwKo-QjpAeHmUnaNUrsDBXaVCmHhZ0Dxp_G7Oo20PVjmcQ0MY2ga2tUNtGxCT8pjk-3stNVIMhZIeJfvcHEGFVai0hN-drVXPpHJHRamkkAVr9feTUOrPiYdpXOdgjWqO8cNID2kbBXdzknKA4"
+                />
+              </div>
+              <p class="mt-2 font-semibold text-primary-black text-sm">
+                Low Severity
+              </p>
+              <p class="text-xs text-gray-500">May 22, Mild itch...</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2
+            class="text-primary-black dark:text-gray-200 text-xl font-bold mb-4"
+          >
+            Potential Trigger Watchlist
+          </h2>
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium"
+            >
+              Pollen
+            </button>
+            <button
+              class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
+            >
+              Dairy
+            </button>
+            <button
+              class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
+            >
+              Stress
+            </button>
+            <button
+              class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
+            >
+              Heat
+            </button>
+            <button
+              class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium"
+            >
+              Fabric
+            </button>
+          </div>
+        </div>
+        <div class="space-y-3 pb-4">
+          <div class="flex justify-between items-center">
+            <h2 class="text-primary-black dark:text-gray-200 text-xl font-bold">
+              Log History
+            </h2>
+          </div>
+          <a
+            class="bg-white dark:bg-zinc-800 rounded-xl p-4 flex items-center justify-between shadow-[0_2px_8px_rgba(0,0,0,0.05)]"
+            href="#"
+          >
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-gray-200 rounded-lg overflow-hidden">
+                <img
+                  alt="Rash on leg"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCneOX9cd_KtAfY9zgY7f7AKBhat8w_NJulOqE1N8vuTI4xXVM5LM9sS3zDu7IG-8YKG-4PRcIh-gwNVnykB-QVXzGgLjKsFtYGHjkwPi83RKX9mJEALS1tp_yLyB_Alxu5Mk_vHgoSKGd906FCQixQW7Ciw_XoIiL5XRJyQp9ZUB_9FhRrH6UOtRJKH2YABQxHnEUOdsEZXlwoWc1Ja5WJ33wzQP1cbn3t1QhMXCDJkPWhEnIRUtdepmFIoJNuUc5kY0_DEdm4fIg"
+                />
+              </div>
+              <div>
+                <p class="font-semibold text-primary-black dark:text-gray-200">
+                  Rash back leg
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  Severity: High
+                </p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-gray-400"
+              >arrow_forward_ios</span
+            >
+          </a>
+          <a
+            class="bg-white dark:bg-zinc-800 rounded-xl p-4 flex items-center justify-between shadow-[0_2px_8px_rgba(0,0,0,0.05)]"
+            href="#"
+          >
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-gray-200 rounded-lg overflow-hidden">
+                <img
+                  alt="Dry skin patch"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxm0NUKmM3_TLWG2b_ekXHCH5tCPjpeHBPhVmCo6smDAtQ5-a6CwzQnMA-mP1k-Glm7DwiB7eFfCz76pBZkKdsftceOWSG9enbv5v300w2A6OGZuuqq3oF34PxHEJgCzkbimgYCvX0xWq9nQsMHmKhEdU0oOtBo5vOJvBw-sfDiI-ASLEmEjXuRmwHNVuRYhxhQzuROFUrw1X0MTk_5vuYq4zWPAxLtLLPmuEn7uAR1_Z_4Z_xc-obpHqOs_ykhmYn6ZEPoP8reSM"
+                />
+              </div>
+              <div>
+                <p class="font-semibold text-primary-black dark:text-gray-200">
+                  Dry patch on arm
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  Severity: Medium
+                </p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-gray-400"
+              >arrow_forward_ios</span
+            >
+          </a>
+        </div>
+      </div>
+      <div
+        class="px-4 py-5 mt-auto bg-background-light dark:bg-background-dark sticky bottom-0"
+      >
+        <a href="addsymptomlog.html">
+          <button
+            class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]"
+          >
+            <span class="truncate">Create New Log</span>
+          </button>
+        </a>
+      </div>
+    </div>
+    <footer
+      class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800"
+    >
+      <nav class="flex justify-around items-center h-20">
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="home.html"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span class="text-xs font-medium">Home</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="insight.html"
+        >
+          <span class="material-symbols-outlined">insights</span>
+          <span class="text-xs font-medium">Insights</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-primary"
+          href="resources.html"
+        >
+          <div
+            class="w-16 h-16 flex items-center justify-center -mt-8 bg-primary text-white rounded-full shadow-lg"
+          >
+            <span class="material-symbols-outlined" style="font-size: 32px"
+              >library_books</span
+            >
+          </div>
+          <span
+            class="text-xs font-medium -mt-1 text-slate-800 dark:text-slate-200"
+            >Resources</span
+          >
+        </a>
+
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="tracker.html"
+        >
+          <span class="material-symbols-outlined">bar_chart</span>
+          <span class="text-xs font-medium">Tracker</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="editprofile.html"
+        >
+          <span class="material-symbols-outlined">person</span>
+          <span class="text-xs font-medium">Profile</span>
+        </a>
+      </nav>
+    </footer>
+  </body>
+</html>

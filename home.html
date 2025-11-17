@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Eczema Tracker</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
+    >
+      <div class="flex-grow">
+        <header
+          class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10"
+        >
+          <div class="w-12"></div>
+          <h1
+            class="flex-1 text-center text-lg font-bold text-background-dark dark:text-background-light"
+          >
+            Eczema Tracker
+          </h1>
+          <div class="flex w-12 items-center justify-end">
+            <button
+              class="flex items-center justify-center rounded-full h-10 w-10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30"
+            >
+              <span class="material-symbols-outlined">settings</span>
+            </button>
+          </div>
+        </header>
+        <main class="p-4">
+          <section class="flex items-center gap-4 mb-8">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-20 w-20"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDusZRHq0vTsmxyMD2IwtvsujUTwgz9pDh5egAgIPPduJkTUHaNuuucdnvspb_v87AE8l28P1HxdUsvM3QdD5pp2cNNzNmKBavS2JDQK7MDlFpktd-zLGexksIWQ_LXYl6tkxXJUIqAFjd8vfRre0ck-3n-qAx9afDTsQDhwBlN8ArWQZJKkaM0ZefLNPQr9EQDnEqaHGAA3xTAnkrxNKD3NiYGjl43Qajl2LumvtAeQBA6vkvWzP5Y4ewVAPJMFDHVpyY1TQYWy7s');
+              "
+            ></div>
+            <div class="flex flex-col">
+              <p
+                class="text-2xl font-bold text-background-dark dark:text-background-light"
+              >
+                Hi, Sarah
+              </p>
+              <p
+                class="text-base text-background-dark/60 dark:text-background-light/60"
+              >
+                Welcome back
+              </p>
+            </div>
+          </section>
+          <section class="mb-8">
+            <h2
+              class="text-xl font-bold text-background-dark dark:text-background-light mb-4"
+            >
+              Today's Overview
+            </h2>
+            <div
+              class="flex items-stretch justify-between gap-4 rounded-xl bg-background-light dark:bg-background-dark/50 p-4 shadow-sm"
+            >
+              <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                <p
+                  class="text-base font-bold text-background-dark dark:text-background-light"
+                >
+                  Eczema Status
+                </p>
+                <p
+                  class="text-sm text-background-dark/60 dark:text-background-light/60"
+                >
+                  Mild flare-up on arms and legs
+                </p>
+              </div>
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV0ElU_Q5qJf_qqkdHDAj3aempohcvszlM7srbW9JbUspI2ebt81m9y3LLWzrA8mV2P4H8JxbIeNrcHjMB_K8O6wqp4_E8LgslEgR_jadEBgny486BMXnQLngRmVo6O_i3gYvSUALXq3CjCkduz0AQd5sc_T0U6FdQcUeUjzJJNWyh5SlzQpf5Ty0p5jQKB9_XobZ0yC105h5KiBksfH_y9PDqTdhP9xu-VeeWHGY3E7GiodxMyybl8OoGR_whC7GhFPa4kFMNOoY');
+                "
+              ></div>
+            </div>
+          </section>
+          <div class="space-y-6">
+            <div>
+              <h2
+                class="text-xl font-bold text-background-dark dark:text-background-light mb-4"
+              >
+                Recent Logs
+              </h2>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center gap-4 rounded-lg p-3 bg-primary/10 dark:bg-primary/20"
+                >
+                  <div
+                    class="flex items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/30 shrink-0 size-12 text-background-dark dark:text-background-light"
+                  >
+                    <span class="material-symbols-outlined">description</span>
+                  </div>
+                  <div class="flex-grow">
+                    <p
+                      class="font-medium text-background-dark dark:text-background-light"
+                    >
+                      Morning Log
+                    </p>
+                    <p
+                      class="text-sm text-background-dark/60 dark:text-background-light/60"
+                    >
+                      Itchy rash on cheeks
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 rounded-lg p-3 bg-primary/10 dark:bg-primary/20"
+                >
+                  <div
+                    class="flex items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/30 shrink-0 size-12 text-background-dark dark:text-background-light"
+                  >
+                    <span class="material-symbols-outlined">description</span>
+                  </div>
+                  <div class="flex-grow">
+                    <p
+                      class="font-medium text-background-dark dark:text-background-light"
+                    >
+                      Evening Log
+                    </p>
+                    <p
+                      class="text-sm text-background-dark/60 dark:text-background-light/60"
+                    >
+                      Dry patches on elbows
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2
+                class="text-xl font-bold text-background-dark dark:text-background-light mb-4"
+              >
+                Upcoming Reminders
+              </h2>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center gap-4 rounded-lg p-3 bg-primary/10 dark:bg-primary/20"
+                >
+                  <div
+                    class="flex items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/30 shrink-0 size-12 text-background-dark dark:text-background-light"
+                  >
+                    <span class="material-symbols-outlined">alarm</span>
+                  </div>
+                  <div class="flex-grow">
+                    <p
+                      class="font-medium text-background-dark dark:text-background-light"
+                    >
+                      10:00 AM
+                    </p>
+                    <p
+                      class="text-sm text-background-dark/60 dark:text-background-light/60"
+                    >
+                      Apply cream to affected areas
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 rounded-lg p-3 bg-primary/10 dark:bg-primary/20"
+                >
+                  <div
+                    class="flex items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/30 shrink-0 size-12 text-background-dark dark:text-background-light"
+                  >
+                    <span class="material-symbols-outlined">alarm</span>
+                  </div>
+                  <div class="flex-grow">
+                    <p
+                      class="font-medium text-background-dark dark:text-background-light"
+                    >
+                      7:00 PM
+                    </p>
+                    <p
+                      class="text-sm text-background-dark/60 dark:text-background-light/60"
+                    >
+                      Give antihistamine
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="mt-8">
+            <h2
+              class="text-xl font-bold text-background-dark dark:text-background-light mb-4"
+            >
+              Quick Actions
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+              <a href="addsymptomlog.html">
+                <button
+                  class="flex w-full items-center justify-center rounded-xl h-12 px-4 bg-primary text-background-dark text-sm font-bold"
+                >
+                  <span>Log Symptoms</span>
+                </button>
+              </a>
+              <a href="addreminder.html">
+                <button
+                  class="flex w-full items-center justify-center rounded-xl h-12 px-4 bg-primary/20 dark:bg-primary/30 text-background-dark dark:text-background-light text-sm font-bold"
+                >
+                  <span>Create Reminder</span>
+                </button>
+              </a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <footer
+      class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800"
+    >
+      <nav class="flex justify-around items-center h-20">
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="home.html"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span class="text-xs font-medium">Home</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="insight.html"
+        >
+          <span class="material-symbols-outlined">insights</span>
+          <span class="text-xs font-medium">Insights</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-primary"
+          href="resources.html"
+        >
+          <div
+            class="w-16 h-16 flex items-center justify-center -mt-8 bg-primary text-white rounded-full shadow-lg"
+          >
+            <span class="material-symbols-outlined" style="font-size: 32px"
+              >library_books</span
+            >
+          </div>
+          <span
+            class="text-xs font-medium -mt-1 text-slate-800 dark:text-slate-200"
+            >Resources</span
+          >
+        </a>
+
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="tracker.html"
+        >
+          <span class="material-symbols-outlined">bar_chart</span>
+          <span class="text-xs font-medium">Tracker</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+          href="editprofile.html"
+        >
+          <span class="material-symbols-outlined">person</span>
+          <span class="text-xs font-medium">Profile</span>
+        </a>
+      </nav>
+    </footer>
+  </body>
+</html>

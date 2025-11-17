@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Reminder Details</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        max-width: 430px;
+        margin: 0 auto; /* center on desktop */
+        background-color: #f6f8f7;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light font-display text-black">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+      <header
+        class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm"
+      >
+        <div
+          class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark"
+        >
+          <a href="reminder.html">
+            <span class="material-symbols-outlined text-3xl"
+              >arrow_back</span
+            ></a
+          >
+        </div>
+        <h1
+          class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Reminder Detail
+        </h1>
+        <div class="flex w-12 items-center justify-end"></div>
+      </header>
+      <main class="flex-1 px-4 pt-4 pb-6">
+        <div class="flex flex-col gap-6">
+          <div class="bg-white rounded-xl p-5 border border-gray">
+            <div class="flex flex-col gap-5">
+              <div class="flex items-center gap-4">
+                <div
+                  class="flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12 text-primary"
+                >
+                  <span class="material-symbols-outlined text-3xl"
+                    >sanitizer</span
+                  >
+                </div>
+                <p
+                  class="text-black text-xl font-semibold leading-normal flex-1"
+                >
+                  Apply Cream: Moisturize hands
+                </p>
+              </div>
+              <hr class="border-gray" />
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4 min-h-12">
+                  <div
+                    class="flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-10 text-primary"
+                  >
+                    <span class="material-symbols-outlined"
+                      >calendar_month</span
+                    >
+                  </div>
+                  <p
+                    class="text-base font-normal leading-normal flex-1 truncate text-black"
+                  >
+                    Dec 25, 2023 at 8:00 AM
+                  </p>
+                </div>
+                <div class="flex items-center gap-4 min-h-12">
+                  <div
+                    class="flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-10 text-primary"
+                  >
+                    <span class="material-symbols-outlined">repeat</span>
+                  </div>
+                  <p
+                    class="text-base font-normal leading-normal flex-1 truncate text-black"
+                  >
+                    Repeats Daily
+                  </p>
+                </div>
+                <div class="flex items-center gap-4 min-h-12">
+                  <div
+                    class="flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-10 text-primary"
+                  >
+                    <span class="material-symbols-outlined">notifications</span>
+                  </div>
+                  <p
+                    class="text-base font-normal leading-normal flex-1 truncate text-black"
+                  >
+                    Alert: 15 minutes before
+                  </p>
+                </div>
+              </div>
+              <hr class="border-gray" />
+              <div>
+                <h3
+                  class="text-lg font-semibold leading-tight tracking-[-0.015em] pb-2 text-black"
+                >
+                  Notes
+                </h3>
+                <p class="text-base font-normal leading-relaxed text-black/70">
+                  Use the new Aveeno cream we bought yesterday.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 pt-4">
+            <a href="addreminder.html">
+              <button
+                class="w-full bg-primary text-white font-bold py-3 px-4 rounded-full transition-transform active:scale-95"
+              >
+                Edit Reminder
+              </button>
+            </a>
+            <button
+              class="w-full bg-primary/20 text-primary font-bold py-3 px-4 rounded-full transition-transform active:scale-95"
+            >
+              Snooze
+            </button>
+            <a href="addreminder.html">
+              <button
+                class="w-full bg-transparent text-error font-bold py-3 px-4 rounded-full transition-transform active:scale-95 mt-2"
+              >
+                Delete Reminder
+              </button>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden"
+    >
+      <div
+        class="bg-background-light rounded-xl p-6 shadow-xl w-full max-w-sm text-center"
+      >
+        <div
+          class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-error/20"
+        >
+          <span class="material-symbols-outlined text-3xl text-error"
+            >delete_forever</span
+          >
+        </div>
+        <h3 class="text-lg font-semibold mt-4 text-black">Delete Reminder?</h3>
+        <p class="mt-2 text-sm text-black/60">
+          Are you sure you want to delete this reminder? This action cannot be
+          undone.
+        </p>
+        <div class="mt-6 flex justify-center gap-4">
+          <button
+            class="flex-1 rounded-full border border-gray bg-white px-4 py-2 text-sm font-medium text-black"
+          >
+            Cancel
+          </button>
+          <button
+            class="flex-1 rounded-full bg-error px-4 py-2 text-sm font-medium text-white"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
