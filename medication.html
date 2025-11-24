@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stitch Design</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        min-height: max(430px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden"
+    >
+      <div class="flex-grow">
+        <header
+          class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm"
+        >
+          <div
+            class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark"
+          >
+            <a href="tracker.html">
+              <span class="material-symbols-outlined text-3xl"
+                >arrow_back</span
+              ></a
+            >
+          </div>
+          <h1
+            class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight flex-1 text-center"
+          >
+            Treatment Dashboard
+          </h1>
+          <div class="flex w-12 items-center justify-end"></div>
+        </header>
+        <main class="p-4 space-y-6">
+          <div>
+            <h2 class="text-xl font-bold text-black dark:text-white mb-4">
+              Current Treatments
+            </h2>
+            <div class="space-y-3">
+              <a
+                class="flex items-center gap-4 bg-background-light dark:bg-background-dark p-3 rounded-lg shadow-sm hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors duration-200"
+                href="#"
+              >
+                <div
+                  class="flex items-center justify-center rounded-full bg-primary/20 shrink-0 size-12"
+                >
+                  <span class="material-symbols-outlined text-primary text-2xl"
+                    >vaccines</span
+                  >
+                </div>
+                <div class="flex-grow">
+                  <p class="text-base font-medium text-black dark:text-white">
+                    Injection
+                  </p>
+                  <p class="text-sm text-black/60 dark:text-white/60">
+                    Dupilumab
+                  </p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-black/40 dark:text-white/40"
+                  >chevron_right</span
+                >
+              </a>
+              <a
+                class="flex items-center gap-4 bg-background-light dark:bg-background-dark p-3 rounded-lg shadow-sm hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors duration-200"
+                href="#"
+              >
+                <div
+                  class="flex items-center justify-center rounded-full bg-primary/20 shrink-0 size-12"
+                >
+                  <span class="material-symbols-outlined text-primary text-2xl"
+                    >pill</span
+                  >
+                </div>
+                <div class="flex-grow">
+                  <p class="text-base font-medium text-black dark:text-white">
+                    Moisturizer
+                  </p>
+                  <p class="text-sm text-black/60 dark:text-white/60">
+                    Topical Cream
+                  </p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-black/40 dark:text-white/40"
+                  >chevron_right</span
+                >
+              </a>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-black dark:text-white mb-4">
+              Add New Treatment
+            </h2>
+            <a
+              class="flex items-center gap-4 bg-background-light dark:bg-background-dark p-3 rounded-lg shadow-sm hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors duration-200"
+              href="addmedication.html"
+            >
+              <div
+                class="flex items-center justify-center rounded-full bg-primary/20 shrink-0 size-12"
+              >
+                <span class="material-symbols-outlined text-primary text-2xl"
+                  >add</span
+                >
+              </div>
+              <p
+                class="text-base font-medium text-black dark:text-white flex-grow"
+              >
+                Add Treatment
+              </p>
+              <span
+                class="material-symbols-outlined text-black/40 dark:text-white/40"
+                >chevron_right</span
+              >
+            </a>
+          </div>
+        </main>
+      </div>
+      <footer
+        class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800"
+      >
+        <nav class="flex justify-around items-center h-20">
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="home.html"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-xs font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="insight.html"
+          >
+            <span class="material-symbols-outlined">insights</span>
+            <span class="text-xs font-medium">Insights</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-primary"
+            href="resources.html"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center -mt-8 bg-primary text-white rounded-full shadow-lg"
+            >
+              <span class="material-symbols-outlined" style="font-size: 32px"
+                >library_books</span
+              >
+            </div>
+            <span
+              class="text-xs font-medium -mt-1 text-slate-800 dark:text-slate-200"
+              >Resources</span
+            >
+          </a>
+
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="tracker.html"
+          >
+            <span class="material-symbols-outlined">bar_chart</span>
+            <span class="text-xs font-medium">Tracker</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400"
+            href="editprofile.html"
+          >
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-xs font-medium">Profile</span>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

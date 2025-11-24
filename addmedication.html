@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Add Treatment</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13ec13",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102210",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Brand Colors
+              primary: "#4A90E2",
+              secondary: "#56C288",
+
+              // State Colors
+              info: "#2F80ED",
+              success: "#27AE60",
+              warning: "#E2B93B",
+              error: "#EB5757",
+
+              // Neutral Colors
+              black: "#212529",
+              gray: "#ADB5BD",
+              white: "#F7FAFC",
+
+              // Background colors (keeping your original)
+              "background-light": "#f6f8f7",
+              "background-dark": "#122017",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(430px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="min-h-screen flex flex-col justify-between">
+      <div>
+        <header class="p-4 flex items-center justify-between">
+          <a href="medication.html">
+            <button class="text-gray-800 dark:text-gray-200">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </a>
+          <h1
+            class="text-lg font-bold text-gray-900 dark:text-white flex-1 text-center"
+          >
+            Add Treatment
+          </h1>
+          <div class="w-8"></div>
+        </header>
+        <main class="px-4 py-6 space-y-4">
+          <div class="space-y-1">
+            <label
+              class="text-sm font-medium text-gray-700 dark:text-gray-300"
+              for="treatment-name"
+              >Treatment Name</label
+            >
+            <input
+              class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg h-12 px-4 focus:ring-primary focus:border-primary"
+              id="treatment-name"
+              placeholder="e.g., Hydrocortisone Cream"
+              type="text"
+            />
+          </div>
+          <div class="space-y-1">
+            <label
+              class="text-sm font-medium text-gray-700 dark:text-gray-300"
+              for="treatment-type"
+              >Type</label
+            >
+            <select
+              class="form-select w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg h-12 px-4 focus:ring-primary focus:border-primary"
+              id="treatment-type"
+            >
+              <option>Topical</option>
+              <option>Oral</option>
+              <option>Biologic</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label
+                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                for="dosage"
+                >Dosage</label
+              >
+              <input
+                class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg h-12 px-4 focus:ring-primary focus:border-primary"
+                id="dosage"
+                placeholder="e.g., 1%"
+                type="text"
+              />
+            </div>
+            <div class="space-y-1">
+              <label
+                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                for="frequency"
+                >Frequency</label
+              >
+              <select
+                class="form-select w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg h-12 px-4 focus:ring-primary focus:border-primary"
+                id="frequency"
+              >
+                <option>Twice a day</option>
+                <option>Once a day</option>
+                <option>As needed</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label
+                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                for="start-date"
+                >Start Date</label
+              >
+              <input
+                class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg h-12 px-4 focus:ring-primary focus:border-primary"
+                id="start-date"
+                type="date"
+              />
+            </div>
+            <div class="space-y-1">
+              <label
+                class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                for="end-date"
+                >End Date (Optional)</label
+              >
+              <input
+                class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg h-12 px-4 focus:ring-primary focus:border-primary"
+                id="end-date"
+                type="date"
+              />
+            </div>
+          </div>
+          <div class="space-y-1">
+            <label
+              class="text-sm font-medium text-gray-700 dark:text-gray-300"
+              for="notes"
+              >Notes or Instructions</label
+            >
+            <textarea
+              class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg p-4 focus:ring-primary focus:border-primary"
+              id="notes"
+              placeholder="e.g., Apply a thin layer to affected areas after bath."
+              rows="4"
+            ></textarea>
+          </div>
+        </main>
+      </div>
+      <footer
+        class="p-4 sticky bottom-0 bg-background-light dark:bg-background-dark"
+      >
+        <a href="medication.html">
+          <button
+            class="w-full bg-primary text-black font-bold h-12 rounded-full flex items-center justify-center text-base"
+          >
+            Add Treatment
+          </button>
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
