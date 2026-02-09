@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener | Kyle You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 24px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fafafa;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 14px;
+            font-weight: 400;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.5;
+        }
+
+        /* Project Hero */
+        .project-hero {
+            padding: 160px 48px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 48px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #1a1a1a;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 48px;
+            margin-bottom: 24px;
+        }
+
+        .meta-item {
+            font-size: 14px;
+        }
+
+        .meta-label {
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .meta-value {
+            color: #1a1a1a;
+            font-weight: 400;
+        }
+
+        .project-title {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .project-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            color: #444;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 48px;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 500px;
+            background-color: #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Project Content */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px 120px;
+        }
+
+        .content-section {
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+        }
+
+        .rationale-text {
+            font-size: 18px;
+            font-weight: 300;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Project Details Grid */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            padding: 48px 0;
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 64px;
+        }
+
+        .detail-item h4 {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .detail-item p {
+            font-size: 16px;
+            font-weight: 400;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            margin: 64px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .gallery-item {
+            background-color: #e5e5e5;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-item.full-width {
+            grid-column: span 2;
+            width: 60%; 
+            height: auto; 
+            margin: 0 auto; 
+            display: block; 
+          
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Project Links */
+        .project-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 48px;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 16px 32px;
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .project-link.primary {
+            background-color: #1a1a1a;
+            color: #fafafa;
+        }
+
+        .project-link.primary:hover {
+            background-color: #333;
+        }
+
+        .project-link.secondary {
+            background-color: transparent;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+        }
+
+        .project-link.secondary:hover {
+            background-color: #1a1a1a;
+            color: #fafafa;
+        }
+
+        /* Next Project */
+        .next-project {
+            background-color: #1a1a1a;
+            color: #fafafa;
+            padding: 120px 48px;
+            text-align: center;
+        }
+
+        .next-label {
+            font-size: 12px;
+            font-weight: 400;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .next-title {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 32px;
+        }
+
+        .next-title a {
+            color: #fafafa;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .next-title a:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px;
+            text-align: center;
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 24px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .project-hero {
+                padding: 120px 24px 60px;
+            }
+
+            .project-meta {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .featured-image {
+                padding: 0 24px;
+            }
+
+            .image-placeholder {
+                height: 300px;
+            }
+
+            .project-content {
+                padding: 0 24px 80px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item.full-width {
+                grid-column: span 1;
+                height: 300px;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .project-link {
+                text-align: center;
+            }
+
+            .next-project {
+                padding: 80px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Kyle You</a>
+        <ul class="nav-links">
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <a href="index.html#work" class="back-link">← Back to Projects</a>
+        
+        <div class="project-meta">
+            <div class="meta-item">
+                <p class="meta-label">Role</p>
+                <p class="meta-value">Full Stack Developer</p>
+            </div>
+            <div class="meta-item">
+                <p class="meta-label">Timeline</p>
+                <p class="meta-value">2 Weeks</p>
+            </div>
+            <div class="meta-item">
+                <p class="meta-label">Type</p>
+                <p class="meta-value">Personal Project</p>
+            </div>
+        </div>
+
+        <h1 class="project-title">URL Shortener</h1>
+        <p class="project-tagline">A high-performance link shortening service with Redis caching, analytics tracking, and a clean, intuitive interface.</p>
+    </section>
+
+    <!-- Featured Image -->
+    <div class="featured-image">
+        
+        <img src="Showcase.png" alt="URL Shortener Interface">
+    </div>
+
+    <!-- Project Content -->
+    <section class="project-content">
+
+        <!-- Project Details -->
+        <div class="details-grid">
+            <div class="detail-item">
+                <h4>Frontend</h4>
+                <p>React<br>TypeScript<br>Tailwind CSS<br>Vite</p>
+            </div>
+            <div class="detail-item">
+                <h4>Backend</h4>
+                <p>Hono<br>Bun Runtime<br>Drizzle ORM<br>Neon PostgreSQL<br>Redis</p>
+            </div>
+            <div class="detail-item">
+                <h4>Features</h4>
+                <p>URL Shortening<br>Redis Caching<br>RESTful API</p>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="content-section">
+            <p class="section-label">Overview</p>
+            <h2 class="section-title">Project Details</h2>
+            <p class="rationale-text">
+                I built this URL shortener to deepen my understanding of caching strategies and optimize redirect performance. The concept is straightforward—paste a long URL, get a short one—but the real focus was on building something that could handle traffic efficiently.
+            </p>
+            <br>
+            <p class="rationale-text">
+                I also implemented rate limiting using Redis to manage traffic and ensure consistent performance. Each IP address is capped at 30 requests per minute using a sliding window counter. Once the limit is hit, the API returns a 429 (Too Many Requests) response until the window resets. This helps maintain service reliability under heavy load.
+            </p>
+            <br>
+            <p class="rationale-text">
+                Redis serves as the caching layer, allowing most redirects to bypass the database entirely. The backend uses Hono running on Bun, which offers strong performance compared to traditional Node.js frameworks. For persistent storage, I chose Neon's serverless PostgreSQL for its simplicity and automatic scaling.            </p>
+            <br>
+            <p class="rationale-text">
+                Beyond the current implementation, I used this project to think through how the system would scale. At higher traffic volumes, I'd introduce a load balancer to distribute requests across multiple server instances. The Redis layer would shift to a cluster setup for redundancy, and I'd consider a CDN for geographic distribution. Database reads could be offloaded to read replicas, keeping the primary instance focused on writes. While these aren't implemented here, designing with scale in mind helped me understand the decisions behind real-world URL shorteners like Bitly or TinyURL.            </p>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="attempt.png" alt="URL Shortener Interface"></div>
+                <div class="gallery-item"><img src="succesful.png" alt="URL Shortener Interface"></div>
+                <div class="gallery-item"><img src="redirect.png" alt="URL Shortener Interface"></div>
+                <div class="gallery-item"><img src="redis.png" alt="URL Shortener Interface"></div>
+            </div>
+        </div>
+
+        <!-- Project Links -->
+        <div class="project-links">
+            <a href="#" disabled class="project-link primary">View Live Project</a>
+            <a href="https://github.com/kyou4/url-shortener" class="project-link secondary">View on GitHub</a>
+        </div>
+
+    </section>
+
+    <!-- Next Project -->
+    <section class="next-project">
+        <p class="next-label">Next Project</p>
+        <h2 class="next-title"><a href="forge.html">Forge →</a></h2>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Kyle You. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
